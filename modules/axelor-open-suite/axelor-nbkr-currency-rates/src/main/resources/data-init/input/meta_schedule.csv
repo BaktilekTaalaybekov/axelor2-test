@@ -1,0 +1,2 @@
+"active";"name";"job";"cron"
+"true";"NBKR Currency Rates Daily Sync";"com.axelor.apps.nbkrcurrencyrates.job.CurrencyRateSyncJob";"0 0 9 * * ?"

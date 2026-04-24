@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_8.1.xsd">
+
+  <form id="nbkr-meta-schedule-form" name="meta-schedule-form" title="Schedule"
+    model="com.axelor.meta.db.MetaSchedule" extension="true">
+    <extend target="//panel[@title='Overview']">
+      <insert position="after">
+        <panel name="nbkrPanel" title="NBKR Currency Rates"
+          showIf="name == 'NBKR Currency Rates Daily Sync' &amp;&amp; job == 'com.axelor.apps.nbkrcurrencyrates.job.CurrencyRateSyncJob'">
+          <button name="btnRunNbkrNow" title="Run now"
+            onClick="action-nbkr-meta-schedule-method-run-now"/>
+        </panel>
+      </insert>
+    </extend>
+  </form>
+
+  <action-method name="action-nbkr-meta-schedule-method-run-now">
+    <call class="com.axelor.apps.nbkrcurrencyrates.web.NbkrMetaScheduleController"
+      method="runNbkrScheduleNow"/>
+  </action-method>
+
+</object-views>

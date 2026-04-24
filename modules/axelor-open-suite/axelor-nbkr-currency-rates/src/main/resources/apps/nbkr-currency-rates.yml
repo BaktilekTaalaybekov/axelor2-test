@@ -1,0 +1,13 @@
+---
+name: NBKR Currency Rates
+code: nbkr-currency-rates
+typeSelect: standard
+installOrder: 2400
+description: |
+  NBKR currency rates configuration.
+image: app-nbkr-currency-rates.png
+modules:
+  axelor-nbkr-currency-rates
+dependsOn:
+  - base
+sequence: 125

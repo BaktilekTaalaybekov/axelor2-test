@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_8.1.xsd">
+
+  <menuitem name="nbkr-currency-rates-root" title="NBKR Currency Rates" order="-250"
+    icon="currency-exchange" icon-background="#1f8f5f"/>
+
+  <menuitem name="nbkr-currency-rates-list" title="Currency rates"
+    action="nbkr.currency.rates.action" parent="nbkr-currency-rates-root" order="100"/>
+
+  <menuitem name="nbkr-currency-rates-sync-now" title="Update rates now"
+    action="nbkr.currency.rates.sync.action" parent="nbkr-currency-rates-root" order="110"/>
+
+  <action-view name="nbkr.currency.rates.action" title="NBKR currency rates"
+    model="com.axelor.apps.nbkrcurrencyrates.db.CurrencyRate">
+    <view type="grid" name="nbkr-currency-rate-grid"/>
+    <view type="form" name="nbkr-currency-rate-form"/>
+    <view type="search" name="nbkr-currency-rate-filters"/>
+  </action-view>
+
+  <action-view name="nbkr.currency.rates.sync.action" title="NBKR currency rates sync"
+    model="com.axelor.apps.nbkrcurrencyrates.db.CurrencyRate">
+    <view type="form" name="nbkr-currency-rate-sync-form"/>
+  </action-view>
+
+</object-views>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<object-views xmlns="http://axelor.com/xml/ns/object-views"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://axelor.com/xml/ns/object-views http://axelor.com/xml/ns/object-views/object-views_8.1.xsd">
+
+  <grid name="nbkr-currency-rate-grid" title="NBKR currency rates"
+    model="com.axelor.apps.nbkrcurrencyrates.db.CurrencyRate">
+    <field name="rateDate"/>
+    <field name="code"/>
+    <field name="name"/>
+    <field name="source"/>
+    <field name="nominal"/>
+    <field name="rate"/>
+    <field name="updatedOn"/>
+  </grid>
+
+  <form name="nbkr-currency-rate-form" title="NBKR currency rate"
+    model="com.axelor.apps.nbkrcurrencyrates.db.CurrencyRate" width="large">
+    <toolbar>
+      <button name="btnUpdateRatesNow" title="Update rates now"
+        onClick="action-nbkr-currency-rate-method-update-rates"/>
+    </toolbar>
+    <panel name="mainPanel">
+      <field name="rateDate"/>
+      <field name="code"/>
+      <field name="name"/>
+      <field name="source" readonly="true"/>
+      <field name="nominal"/>
+      <field name="rate"/>
+    </panel>
+  </form>
+
+  <form name="nbkr-currency-rate-sync-form" title="NBKR currency rates sync"
+    model="com.axelor.apps.nbkrcurrencyrates.db.CurrencyRate" width="medium">
+    <panel name="syncPanel" title="Manual sync">
+      <button name="btnUpdateRatesNowFromSyncForm" title="Update rates now"
+        onClick="action-nbkr-currency-rate-method-update-rates"/>
+    </panel>
+  </form>
+
+  <action-method name="action-nbkr-currency-rate-method-update-rates">
+    <call class="com.axelor.apps.nbkrcurrencyrates.web.CurrencyRateController" method="updateRates"/>
+  </action-method>
+
+  <search-filters name="nbkr-currency-rate-filters" model="com.axelor.apps.nbkrcurrencyrates.db.CurrencyRate"
+    title="NBKR currency rates filters">
+    <field name="rateDate"/>
+    <field name="code"/>
+  </search-filters>
+
+</object-views>
