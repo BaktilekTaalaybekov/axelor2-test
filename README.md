@@ -34,3 +34,38 @@ $ git submodule foreach git pull origin master
 ```
 
 You can find more detailed [installation instructions](https://docs.axelor.com/abs/5.0/install/index.html) on our documentation.
+
+Quick start (run locally)
+================================
+
+Prerequisites:
+
+* Java 22
+* PostgreSQL (database `axelor-open-suite`)
+* Internet access for Gradle dependencies
+
+From a fresh clone:
+
+```bash
+git clone <your-repo-url>
+cd open-suite-webapp-clean
+git submodule update --init --recursive
+```
+
+Configure database in `src/main/resources/axelor-config.properties`:
+
+```properties
+db.default.url=jdbc:postgresql://localhost:5432/axelor-open-suite
+db.default.user=axelor
+db.default.password=your_password
+```
+
+Start the application:
+
+```bash
+./gradlew run
+```
+
+Open:
+
+* `http://localhost:8080/axelor-erp/`

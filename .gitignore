@@ -12,6 +12,7 @@ bin
 # Intellij
 out
 .idea
+.vscode
 *.iml
 *.ipr
 *.iws
@@ -35,6 +36,8 @@ hs_err_pid*
 
 # Miscellaneous
 *.log
+.tmp
+.cache
 .clover
 .DS_Store
 
